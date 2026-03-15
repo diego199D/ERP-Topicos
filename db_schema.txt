@@ -1,0 +1,35 @@
+modulo de inventario: tabla productos (id, nombre, precio, stock)
+modulo de clientes: tabla clientes (id, nombre, ci_nit)
+modulo de ventas: tabla ventas (id, cliente_id, total)
+modulo de compras: tabla compras (id, proveedor, total)
+
+contrasena: diego199D
+
+* api gateway de modulo inventario:
+https://4uhm5lvh8a.execute-api.us-east-2.amazonaws.com/default/modulo-inventario
+
+* api gateway de modulo clientes
+https://hlo79n5ckg.execute-api.us-east-2.amazonaws.com/default/modulo-clientes
+
+* api gateway de modulo ventas
+https://b82po5ub7g.execute-api.us-east-2.amazonaws.com/default/modulo-ventas
+
+* api gateway de modulo compras
+https://izlhx8i9y4.execute-api.us-east-2.amazonaws.com/default/modulo-compras
+
+
+=== CONFIGURACIÓN AWS RDS ===
+Instancia: instancia-erp-diego
+Usuario: admin
+Password: diego199D
+Base de Datos Inicial: db_inventario
+Puerto: 3306
+
+=== TABLAS PENDIENTES ===
+- productos (id, nombre, precio, stock)
+- clientes (id, nombre, ci_nit)
+
+
+mysql -h erp-diego-ahorro.c564mc4wyknl.us-east-2.rds.amazonaws.com -P 3306 -u admin -p'diego199D' --ssl-verify-server-cert  --ssl-ca=/certs/global-bundle.pem db_inventario
+#para las lambda es solo esto:
+erp-diego-ahorro.c564mc4wyknl.us-east-2.rds.amazonaws.com

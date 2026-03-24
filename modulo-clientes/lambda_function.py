@@ -21,7 +21,7 @@ def lambda_handler(event, context):
                 sql = "INSERT INTO clientes (nombre, email, telefono) VALUES (%s, %s, %s)"
                 cursor.execute(sql, (body.get('nombre'), body.get('email'), body.get('telefono')))
                 conexion.commit()
-                res = {"mensaje": "✅ Cliente registrado con éxito."}
+                res = {"mensaje": "Cliente registrado con éxito."}
             else:
                 cursor.execute("SELECT * FROM clientes")
                 res = cursor.fetchall()
